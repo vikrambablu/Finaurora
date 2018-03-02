@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>site</title>
+<meta name="description" content="Responsive Ebook Landing Page">
+
+
+<link href="css/styles.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+
+<style>
+.appsLand-header
+{background:url(img/bg.jpg) center top/cover no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+</style>
+</head>
+<body>
+
+<section class="appsLand-header" style=" height:500px;">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-md-offset-8">
+<div>
+<h1 style="font-size:40px; color:#fff; font-weight:600; padding-top:120px; text-shadow: 4px 4px #000;"><span style="font-size:45px;"><b>FinTech AI Lab</b></span><br><span class="ityped"></span></h1>
+ <script src="https://unpkg.com/ityped@0.0.10"></script>
+      <script>
+            window.ityped.init(document.querySelector('.ityped'),{
+                strings: ['Empowering the NEXT BILLION in South East Asia!'],
+                loop: true
+            })
+        </script>
+</div>
+</div>
+</div>
+</div> 
+</section>
+
+
+<section style="padding:80px 0px;">
+<div class="container">
+<div class="row">
+
+<div class="col-md-3 col-xs-12">
+<div class="text-center">
+  <img src="img/demo.jpg" class="img-circle">
+  <h3>WealthMax.ai</h3>
+   </div>
+</div>
+<div class="col-md-3 col-xs-12">
+<div class="text-center">
+  <img src="img/demo.jpg" class="img-circle">
+  <h3>AlgoTrades.ai</h3>
+   </div>
+</div>
+<div class="col-md-3 col-xs-12">
+<div class="text-center">
+  <img src="img/demo.jpg" class="img-circle">
+  <h3>EasyInsurnace.ai</h3>
+   </div>
+</div>
+<div class="col-md-3 col-xs-12">
+<div class="text-center">
+  <img src="img/demo.jpg" class="img-circle">
+  <h3>createwealth.ai</h3>
+   </div>
+</div>
+</div>
+</div>
+</section>
+ 
+
+
+<!--site-footer-->
+<footer class="site-footer section-spacing">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="scroll-top"><a href="#"><i class="fa fa-chevron-up"></i></a></p>
+        <small style="color:#000;">&copy; Copyright <b>Vikram </b>. All Rights Reserved.</small>    
+   </div>
+    </div>
+  </div>
+</footer>
+<!--site-footer end--> 
+
+
+
+<script src="js/scripts.min.js"></script> 
+<script src="js/main.js"></script> 
+
+<script>
+var
+  words = ['hey I like SASS','I used to like LESS','I also heart Jade'],
+  part,
+  i = 0,
+  offset = 0,
+  len = words.length,
+  forwards = true,
+  skip_count = 0,
+  skip_delay = 5,
+  speed = 100;
+
+var wordflick = function(){
+  setInterval(function(){
+      if (forwards) {
+        if(offset >= words[i].length){
+          ++skip_count;
+          if (skip_count == skip_delay) {
+            forwards = false;
+            skip_count = 0;
+          }
+        }
+      }
+      else {
+         if(offset == 0){
+            forwards = true;
+            i++;
+            offset = 0;
+            if(i >= len){
+              i=0;
+            } 
+         }
+      }
+      part = words[i].substr(0, offset);
+      if (skip_count == 0) {
+        if (forwards) {
+          offset++;
+        }
+        else {
+          offset--;
+        }
+      }
+    	$('.word').text(part);
+  },speed);
+};
+
+$(document).ready(function(){
+  wordflick();
+});
+</script>
+
+</body>
+</html>
